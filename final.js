@@ -51,9 +51,9 @@ const server = http.createServer(async(request, response) => {
     if (parsedURL.pathname === '/') {
         response.statusCode = 200;
         response.setHeader("Content-Type", "Text/html");
+        response.write(`<center><h2>DAFTAR MAHASISWA INFORMATIKA 2019</h2></center>`)
         mahasiswa.map((elemen) => {
             response.statusCode = 200;
-            response.write(`<h2>Daftar Mahasiswa</h2>`)
             response.write(`
             <ul>
                 <li><a href="profil?nim=${elemen.nim}">${elemen.nama}</a></li>
